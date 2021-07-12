@@ -6,6 +6,8 @@
   "author": "odan <odan3240@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "hardhat": "^2.4.3"
+    "@eth-optimism/hardhat-ovm": "^0.2.2",
+    "hardhat": "^2.4.3",
+    "prettier": "^2.3.2"
   }
 }

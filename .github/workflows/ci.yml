@@ -5,12 +5,11 @@ on:
     branches:
       - main
   pull_request:
-      types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 jobs:
   ci:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,26 +17,26 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Checkout ethereum-optimism/optimism
-      uses: actions/checkout@v2
-      with:
-        repository: ethereum-optimism/optimism
-        path: optimism
+      - name: Checkout ethereum-optimism/optimism
+        uses: actions/checkout@v2
+        with:
+          repository: ethereum-optimism/optimism
+          path: optimism
 
-    - name: ls
-      run: |
-        ls optimism
-        ls optimism/ops
+      - name: ls
+        run: |
+          ls optimism
+          ls optimism/ops
 
-    - name: Build
-      run: docker-compose build && echo Build complete
-      working-directory: optimism/ops
-      env:
-        COMPOSE_DOCKER_CLI_BUILD: 1
-        DOCKER_BUILDKIT: 1
+      - name: Build
+        run: docker-compose build && echo Build complete
+        working-directory: optimism/ops
+        env:
+          COMPOSE_DOCKER_CLI_BUILD: 1
+          DOCKER_BUILDKIT: 1
