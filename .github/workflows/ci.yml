@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
       types: [opened, synchronize, reopened]
   workflow_dispatch:
@@ -28,3 +28,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ethereum-optimism/optimism
+
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
