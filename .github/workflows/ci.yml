@@ -33,11 +33,11 @@ jobs:
     - name: ls
       run: |
         ls optimism
-        ls optimism/opt
+        ls optimism/ops
 
     - name: Build
       run: docker-compose build && echo Build complete
-      working-directory: optimism/opt
+      working-directory: optimism/ops
       env:
         COMPOSE_DOCKER_CLI_BUILD: 1
         DOCKER_BUILDKIT: 1
