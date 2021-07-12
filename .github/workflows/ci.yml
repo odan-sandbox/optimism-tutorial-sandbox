@@ -30,6 +30,11 @@ jobs:
         repository: ethereum-optimism/optimism
         path: optimism
 
+    - name: ls
+      run: |
+        ls optimism
+        ls optimism/opt
+
     - name: Build
       run: docker-compose build && echo Build complete
       working-directory: optimism/opt
