@@ -30,5 +30,9 @@ jobs:
         repository: ethereum-optimism/optimism
         path: optimism
 
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    - name: Build
+      run: docker-compose build && echo Build complete
+      working-directory: optimism/opt
+      env:
+        COMPOSE_DOCKER_CLI_BUILD: 1
+        DOCKER_BUILDKIT: 1
