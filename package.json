@@ -1,0 +1,11 @@
+{
+  "name": "optimism-tutorial-sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:odan-sandbox/optimism-tutorial-sandbox.git",
+  "author": "odan <odan3240@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.4.3"
+  }
+}
