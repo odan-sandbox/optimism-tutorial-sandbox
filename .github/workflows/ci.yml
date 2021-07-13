@@ -60,7 +60,8 @@ jobs:
       - name: Start L2
         run: |
           docker-compose up -d
-          ./ops/scripts/wait-for-sequencer.sh
+          ./scripts/wait-for-sequencer.sh
+        working-directory: optimism/ops
 
       - name: Run test
         run: yarn hardhat test
